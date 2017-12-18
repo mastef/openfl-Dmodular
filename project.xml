@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
 	
-	<meta title="ModulesProject" package="com.sample.modulesproject" version="1.0.0" company="Company Name" />
-	<app main="Main" path="Export" file="ModulesProject" />
-	
+	<meta title="ModulesProject" package="com.sample.modulesproject" version="1.0.0" company="ACME" />
+	<app main="Main" path="Export" file="Main" />
+
+	<window width="0" height="0" fps="30" background="0x2A5F75" resizable="false" borderless="false" vsync="false" fullscreen="false" antialiasing="4"/>
+
 	<source path="Source" exclude="Module*" />
 
+	<haxelib name="openfl" />
+	<assets path="Assets" rename="assets" />
+
+	<haxedef name="js-es5" />
+	<haxeflag name="-D source-map-content" />
+	<haxeflag name="-D openfl_dynamic" />
+	<haxeflag name="-D openfl_big_endian" />
+	<haxeflag name="--remap" value="flash:openfl" />
+
+	<!-- <haxeflag name="--macro lime.tools.helpers.ModuleHelper.exclude(['haxe', 'openfl', 'lime'])" /> -->
 
 	<module name="Mod1">
+		<haxeflag name="--remap" value="flash:openfl" />
 		<source path="Source" include="Module1" />
 	</module>
 	
 	<module name="Mod2">
+		<haxeflag name="--remap" value="flash:openfl" />
 		<source path="Source" include="Module2" />
 	</module>
 
@@ -21,12 +35,8 @@
 	</module>
 
 	<module name="Mod4">
+		<haxeflag name="--remap" value="flash:openfl" />
 		<source path="Source" include="Module4" />
 	</module>
-
-	<haxelib name="openfl" />
-	<haxelib name="lime" />
-
-	<assets path="Assets" rename="assets" />
 	
 </project>

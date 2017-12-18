@@ -30,7 +30,16 @@ class Main extends Sprite
 
 		trace("added to stage");
 
-		new Module1();
+		Bundle.load(Module1).then(function(_) {
+			// Module1 and its dependencies was split out and is now loaded yay!
+			new Module1();
+		});
+
+		Bundle.load(fla.Fla).then(function(_) {
+			// Module1 and its dependencies was split out and is now loaded yay!
+			var m = new fla.Fla();
+		});
+		
 	}
 
 }

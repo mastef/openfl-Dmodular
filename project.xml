@@ -6,9 +6,11 @@
 
 	<window width="0" height="0" fps="30" background="0x2A5F75" resizable="false" borderless="false" vsync="false" fullscreen="false" antialiasing="4"/>
 
-	<source path="Source" exclude="Module*" />
+	<source path="Source" />
 
 	<haxelib name="openfl" />
+	<haxelib name="modular" />
+
 	<assets path="Assets" rename="assets" />
 
 	<haxedef name="js-es5" />
@@ -19,7 +21,7 @@
 
 	<!-- <haxeflag name="--macro lime.tools.helpers.ModuleHelper.exclude(['haxe', 'openfl', 'lime'])" /> -->
 
-	<module name="Mod1">
+<!-- 	<module name="Mod1">
 		<haxeflag name="--remap" value="flash:openfl" />
 		<source path="Source" include="Module1" />
 	</module>
@@ -37,6 +39,6 @@
 	<module name="Mod4">
 		<haxeflag name="--remap" value="flash:openfl" />
 		<source path="Source" include="Module4" />
-	</module>
+	</module> -->
 	
 </project>

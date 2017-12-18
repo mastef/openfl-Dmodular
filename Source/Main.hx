@@ -1,19 +1,36 @@
-package;
+import haxe.Log;
+import openfl.Assets;
+import openfl.display.MovieClip;
+import openfl.display.Sprite;
+import openfl.events.Event;
+import openfl.events.UncaughtErrorEvent;
+import openfl.external.ExternalInterface;
+import openfl.system.Security;
+import openfl.ui.Mouse;
 
 
-import lime.app.Application;
+class Main extends Sprite
+{
+	public function new()
+	{
+		super();
 
+		addEventListener(Event.ADDED_TO_STAGE, addedToStageHandler);
 
-class Main extends Application {
-	
-	
-	public function new () {
-		
-		super ();
-		
-		
-		
 	}
-	
-	
+
+	private function addedToStageHandler(e : Event) : Void
+	{
+		removeEventListener(Event.ADDED_TO_STAGE, addedToStageHandler);
+
+		#if debug
+		Security.allowDomain("*");
+		Security.allowInsecureDomain("*");
+		#end
+
+		trace("added to stage");
+
+		new Module1();
+	}
+
 }
